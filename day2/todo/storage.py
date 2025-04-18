@@ -1,7 +1,9 @@
 import os
 from .main_logic import yes_no
 
-def load_tasks(tasks_list, file_name):    #считываем файл
+def load_tasks(file_name):    #считываем файл
+    
+    tasks_list = []
     
     #спрашиваем об очистке
     if len(tasks_list) != 0:
@@ -19,13 +21,15 @@ def load_tasks(tasks_list, file_name):    #считываем файл
     else:
         open(file_name, 'w').close()
         
+    return tasks_list
+        
         
 def save_tasks(tasks_list, file_name):
         
     print("#####################")
 
     with open(file_name, 'w') as f:
-        for task in task_list:
+        for task in tasks_list:
             f.write(task + "\n")
 
     print("Задачи сохранены")    

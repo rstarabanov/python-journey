@@ -16,7 +16,15 @@ match args.command:
         show_tasks(load_tasks(file_name))
     case "add":
         print("Добавить задачу") #add_task(args.text)
+        tasks_list = load_tasks(file_name)
+        add_task(tasks_list, args.param)
+        save_tasks(tasks_list, file_name)
+        tasks_list.clear()
     case "delete":
         print("Удалить задачу") #delete_task(args.number)
+        tasks_list = load_tasks(file_name)
+        delete_task(tasks_list, int(args.param)-1)
+        save_tasks(tasks_list, file_name)
+        tasks_list.clear()
     case _:
         print("Неверная команда")
