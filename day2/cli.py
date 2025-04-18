@@ -23,8 +23,9 @@ match args.command:
     case "delete":
         print("Удалить задачу") #delete_task(args.number)
         tasks_list = load_tasks(file_name)
-        delete_task(tasks_list, int(args.param)-1)
-        save_tasks(tasks_list, file_name)
+        modified = delete_task(tasks_list, int(args.param)-1)
+        if not modified:
+            save_tasks(tasks_list, file_name)
         tasks_list.clear()
     case _:
         print("Неверная команда")

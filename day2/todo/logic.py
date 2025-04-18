@@ -13,14 +13,15 @@ def delete_task(tasks_list, index_task):
         question = "вы уверены в удалении (Да/Нет)?"
         if yes_no(question):    
             tasks_list.pop(index_task)
-            modified = True
+            return True
         else:
             print("#####################")
-            return
+            return False
     else:
         print("Не действительный номер задачи")
         
     print("#####################")
+    return False
 
 def show_tasks(tasks_list):
     print("#####################")

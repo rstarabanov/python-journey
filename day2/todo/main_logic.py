@@ -6,6 +6,6 @@ def yes_no(question):
     
     print("#####################")
     match choise:
-        case "Да": return True
-        case "Нет": return False
+        case "да": return True
+        case "нет": return False
         case _: return yes_no(question)
