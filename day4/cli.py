@@ -12,6 +12,7 @@ file_name = "todo.txt"
 parser = argparse.ArgumentParser(
     description="ToDo CLI — управление задачами из терминала"
 )  # 2. Создаём парсер
+parser.add_argument("--version", action="version", version="ToDo CLI 0.1.0")
 parser.add_argument(
     "command", help="Команда: show / add / delete"
 )  # 3. Добавляем аргументы (или подкоманды)
